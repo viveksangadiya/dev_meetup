@@ -8,8 +8,8 @@ const routes = [
     children: [
       {
         path: '/',
-        name: 'Home',
-        component: () => import('@/views/Home.vue'),
+        name: 'HelloWorld',
+        component: () => import('@/components/HelloWorld.vue'),
       },
       {
         path:'/meetup',
@@ -34,7 +34,12 @@ const routes = [
       {
         path:'/signup',
         name:'Signup',
-        component:() => import('@/components/MeetUp/Signup.vue')
+        component:() => import('@/components/User/Signup.vue')
+      },
+      {
+        path:'/meetups/:id',
+        name:'Meetup',
+        component:() => import('@/components/MeetUp/Meetup.vue')
       }
     ],
   },
