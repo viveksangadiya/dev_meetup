@@ -39,6 +39,7 @@ const routes = [
       {
         path:'/meetups/:id',
         name:'Meetup',
+        props:true,
         component:() => import('@/components/MeetUp/Meetup.vue')
       }
     ],

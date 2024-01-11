@@ -5,15 +5,17 @@ export const store = createStore({
     loadedMeetups: [
       {
         imageUrl: "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
-        id: "1",
+        id: "11",
         title: "Meet IN UK",
-        date: '2023-11-17'
+        date: '2023-11-17',
+        description:'frdfg'
       },
       {
         imageUrl: "https://cdn.vuetifyjs.com/images/cards/hotel.jpg",
         id: "2",
         title: "Meet IN LONDON",
-        date: '2023-11-19'
+        date: '2023-11-19',
+        description:'frdfg'
       },
     ],
     user: {
@@ -22,10 +24,21 @@ export const store = createStore({
     }
   },
   mutations: {
-    // Add mutations if needed
+    createMeetUp(state,payload){
+      state.loadedMeetups.push(payload)
+    }
   },
   actions: {
-    // Add actions if needed
+    createMeetUp({commit},payload){
+       const meetup={
+        title:payload.title,
+        location:payload.location,
+        imageUrl:payload.imageUrl,
+        description:payload.description,
+        date:payload.date
+       }
+       commit('createMeetUp',meetup)
+    }
   },
   getters: {
     loadedMeetups(state) {
